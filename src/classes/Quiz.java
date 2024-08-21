@@ -60,5 +60,9 @@ public class Quiz {
         addQuestion(new Question("Which method is used to start the execution of a Java program?", new String[]{"start()", "main()", "run()", "execute()"}, "main()"));
         addQuestion(new Question("What is the term used for a class that cannot be instantiated?", new String[]{"Abstract class", "Final class", "Static class", "Interface"}, "Abstract class"));
         addQuestion(new Question("Which of the following is an example of inheritance in Java?", new String[]{"class Dog extends Animal", "class Dog implements Animal", "class Dog uses Animal", "class Dog creates Animal"}, "class Dog extends Animal"));
+        addQuestion(new Question("**Which data structure uses LIFO (Last In First Out) principle?**", new String[]{"Queue", "Stack", "Linked List", "Array"}, "Stack"));
+        addQuestion(new Question("**What is the time complexity of accessing an element in an `ArrayList` by index?**", new String[]{"O(1)", "O(n)", "O(log n)", "O(n^2)"}, "O(1)"));
+        addQuestion(new Question("**Which sorting algorithm has an average time complexity of O(n log n)?**", new String[]{"Buble Sort", "Quick Sort", "Insertion Sort", "Selection Sort"}, "Quick Sort"));
+        addQuestion(new Question("**What is the worst-case time complexity of the binary search algorithm?**", new String[]{"O(1)", "O(n)", "O(log n)", "O(n^2)"}, "O(log n)"));
     }
 }

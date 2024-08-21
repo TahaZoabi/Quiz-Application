@@ -49,9 +49,6 @@ public class QuizApp {
     }
 
     public void showInstructions() {
-        System.out.println("Instructions:");
-        System.out.println("1. The quiz will present a series of questions.");
-        System.out.println("2. Enter the number corresponding to your answer.");
-        System.out.println("3. After answering all questions, your score will be displayed.");
+        System.out.println("Instructions:\n1. The quiz will present a series of questions.\n2. Enter the number corresponding to your answer.\n3. After answering all questions, your score will be displayed.");
     }
 }
