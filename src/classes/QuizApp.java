@@ -3,8 +3,8 @@ package classes;
 import java.util.Scanner;
 
 public class QuizApp {
-    private Quiz quiz = new Quiz();
-    private Scanner scanner = new Scanner(System.in);
+    private final Quiz QUIZ = new Quiz();
+    private final Scanner SCANNER_INPUT = new Scanner(System.in);
 
     public static void main(String[] args) {
         QuizApp app = new QuizApp();
@@ -32,16 +32,16 @@ public class QuizApp {
     }
 
     private int getUserChoice() {
-        while (!scanner.hasNextInt()) {
+        while (!SCANNER_INPUT.hasNextInt()) {
             System.out.println("Invalid input. Please enter a number.");
-            scanner.next(); // Clear invalid input
+            SCANNER_INPUT.next(); // Clear invalid input
         }
-        return scanner.nextInt();
+        return SCANNER_INPUT.nextInt();
     }
 
     public void startNewQuiz() {
-        quiz.createQuestions(); // Setup quiz with questions
-        quiz.startQuiz(); // Start the quiz
+        QUIZ.createQuestions(); // Setup quiz with questions
+        QUIZ.startQuiz(); // Start the quiz
     }
 
     public void showInstructions() {

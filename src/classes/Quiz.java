@@ -7,30 +7,18 @@ import java.util.Scanner;
 public class Quiz {
     private List<Question> questions = new ArrayList<>();
     private int score;
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner SCANNER_INPUT = new Scanner(System.in);
 
     public List<Question> getQuestions() {
         return questions;
     }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
+    
     public void addQuestion(Question q) {
         questions.add(q);
     }
 
     public boolean checkAnswer(Question question, int answer) {
-        return answer == question.getCorrectAnswer();
+        return answer == question.getCorrectAnswerIndex();
     }
 
     public void displayScore() {
@@ -40,13 +28,13 @@ public class Quiz {
     public void startQuiz() {
         for (Question question : questions) {
             question.askQuestion();
-            int userAnswer = scanner.nextInt();
+            int userAnswer = SCANNER_INPUT.nextInt();
             if (checkAnswer(question, userAnswer)) {
                 score++;
                 System.out.println("Correct Answer!");
             }
             else {
-                System.out.println("Incorrect, The correct answer was: " + question.getCorrectAnswer());
+                System.out.println("Incorrect, The correct answer was: " + question.getCorrectAnswerIndex());
             }
         }
         displayScore();

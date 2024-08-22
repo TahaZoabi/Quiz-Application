@@ -1,12 +1,9 @@
 package classes;
 
-
-import java.util.Arrays;
-
 public class Question {
-    private String questionText;
-    private String[] options;
-    private String correctAnswer;
+    private final String questionText;
+    private final String[] options;
+    private final String correctAnswer;
 
     public Question(String questionText, String[] options, String correctAnswer) {
         this.questionText = questionText;
@@ -14,37 +11,21 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-    public Question() {
-
-    }
-
     public String getQuestionText() {
         return questionText;
-    }
-
-    public void setQuestionText(String questionText) {
-        this.questionText = questionText;
     }
 
     public String[] getOptions() {
         return options;
     }
-
-    public void setOptions(String[] options) {
-        this.options = options;
-    }
-
-    public int getCorrectAnswer() {
+    
+    public int getCorrectAnswerIndex() {
         for (int i = 0; i < options.length; i++) {
             if (options[i].equalsIgnoreCase(correctAnswer)) {
                 return i + 1;
             }
         }
         return -1;
-    }
-
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
     }
 
     public void displayOptions(String[] options) {
