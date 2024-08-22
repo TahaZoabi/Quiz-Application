@@ -1,6 +1,8 @@
 package classes;
 
 
+import java.util.Arrays;
+
 public class Question {
     private String questionText;
     private String[] options;
@@ -32,8 +34,13 @@ public class Question {
         this.options = options;
     }
 
-    public String getCorrectAnswer() {
-        return correctAnswer;
+    public int getCorrectAnswer() {
+        for (int i = 0; i < options.length; i++) {
+            if (options[i].equalsIgnoreCase(correctAnswer)) {
+                return i + 1;
+            }
+        }
+        return -1;
     }
 
     public void setCorrectAnswer(String correctAnswer) {

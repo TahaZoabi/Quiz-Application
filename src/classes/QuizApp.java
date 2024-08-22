@@ -13,11 +13,7 @@ public class QuizApp {
 
     public void displayMainMenu() {
         while (true) {
-            System.out.println("Welcome to the Quiz App");
-            System.out.println("1. Start New Quiz");
-            System.out.println("2. Show Instructions");
-            System.out.println("3. Exit");
-
+            System.out.println("Welcome to the Quiz App\n1. Start New Quiz\n2. Show Instructions\n3. Exit");
             int choice = getUserChoice();
             switch (choice) {
                 case 1:

@@ -29,8 +29,8 @@ public class Quiz {
         questions.add(q);
     }
 
-    public boolean checkAnswer(Question question, String answer) {
-        return answer.equalsIgnoreCase(question.getCorrectAnswer());
+    public boolean checkAnswer(Question question, int answer) {
+        return answer == question.getCorrectAnswer();
     }
 
     public void displayScore() {
@@ -40,7 +40,7 @@ public class Quiz {
     public void startQuiz() {
         for (Question question : questions) {
             question.askQuestion();
-            String userAnswer = scanner.nextLine();
+            int userAnswer = scanner.nextInt();
             if (checkAnswer(question, userAnswer)) {
                 score++;
                 System.out.println("Correct Answer!");
