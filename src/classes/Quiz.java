@@ -34,7 +34,7 @@ public class Quiz {
     }
 
     public void displayScore() {
-        System.out.println("Your Final Score is: " + score);
+        System.out.println("Your Final Score is: (" + score + "/" + getQuestions().size() + ")");
     }
 
     public void startQuiz() {
