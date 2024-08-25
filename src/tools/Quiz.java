@@ -1,4 +1,4 @@
-package classes;
+package tools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class Quiz {
         System.out.println("Your Final Score is: (" + score + "/" + getQuestions().size() + ")");
     }
 
-    public void startQuiz() {
+    public void initializeQuiz() {
         for (Question question : questions) {
             question.askQuestion();
             int userAnswer = SCANNER_INPUT.nextInt();

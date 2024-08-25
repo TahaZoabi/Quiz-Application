@@ -1,7 +1,7 @@
 package main;
 
 
-import classes.QuizApp;
+import tools.QuizApp;
 
 public class Main {
     public static void main(String[] args) {

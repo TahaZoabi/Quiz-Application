@@ -1,4 +1,4 @@
-package classes;
+package tools;
 
 public class Question {
     private final String questionText;
@@ -18,7 +18,7 @@ public class Question {
     public String[] getOptions() {
         return options;
     }
-    
+
     public int getCorrectAnswerIndex() {
         for (int i = 0; i < options.length; i++) {
             if (options[i].equalsIgnoreCase(correctAnswer)) {

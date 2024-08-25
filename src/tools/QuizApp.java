@@ -1,4 +1,4 @@
-package classes;
+package tools;
 
 import java.util.Scanner;
 
@@ -12,9 +12,11 @@ public class QuizApp {
     }
 
     public void displayMainMenu() {
-        while (true) {
+        int choice;
+        do {
             System.out.println("Welcome to the Quiz App\n1. Start New Quiz\n2. Show Instructions\n3. Exit");
-            int choice = getUserChoice();
+            choice = getUserChoice();
+
             switch (choice) {
                 case 1:
                     startNewQuiz();
@@ -24,12 +26,13 @@ public class QuizApp {
                     break;
                 case 3:
                     System.out.println("Thank you for using the Quiz App!");
-                    return; // Exit the program
+                    break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-        }
+        } while (choice != 3);
     }
+
 
     private int getUserChoice() {
         while (!SCANNER_INPUT.hasNextInt()) {
@@ -41,10 +44,10 @@ public class QuizApp {
 
     public void startNewQuiz() {
         QUIZ.chooseDifficulty(); // Setup quiz with questions
-        QUIZ.startQuiz(); // Start the quiz
+        QUIZ.initializeQuiz(); // Start the quiz
     }
 
     public void showInstructions() {
-        System.out.println("Instructions:\n1. The quiz will present a series of questions.\n2. Enter the number corresponding to your answer.\n3. After answering all questions, your score will be displayed.");
+        System.out.println("Instructions:\n1. The quiz will present a series of questions.\n2. Enter the number corresponding to your answer.\n3. After answering all questions, your score will be displayed.\n");
     }
 }
