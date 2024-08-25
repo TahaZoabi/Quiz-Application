@@ -40,7 +40,7 @@ public class QuizApp {
     }
 
     public void startNewQuiz() {
-        QUIZ.createQuestions(); // Setup quiz with questions
+        QUIZ.chooseDifficulty(); // Setup quiz with questions
         QUIZ.startQuiz(); // Start the quiz
     }
 

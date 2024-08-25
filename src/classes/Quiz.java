@@ -12,7 +12,7 @@ public class Quiz {
     public List<Question> getQuestions() {
         return questions;
     }
-    
+
     public void addQuestion(Question q) {
         questions.add(q);
     }
@@ -40,17 +40,65 @@ public class Quiz {
         displayScore();
     }
 
-    public void createQuestions() {
-        // Create and add questions here
+    public void chooseDifficulty() {
+        int level;
+        do {
+            System.out.println("Choose a difficulty level!\n1) Easy\n2) Medium\n3) Hard");
+            level = SCANNER_INPUT.nextInt();
+
+            switch (level) {
+                case 1:
+                    generateEasyQuestions();
+                    break;
+                case 2:
+                    generateMediumQuestions();
+                    break;
+                case 3:
+                    generateHardQuestions();
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please select a valid difficulty level.");
+            }
+        } while (level < 1 || level > 3);
+    }
+
+
+    public void generateEasyQuestions() {
         addQuestion(new Question("What is the default value of a boolean variable in Java?", new String[]{"true", "false", "null", "0"}, "false"));
-        addQuestion(new Question("Which keyword is used to define a constant in Java?", new String[]{"const", "final", "static", "constant"}, "final"));
-        addQuestion(new Question("What does JVM stand for?", new String[]{"Java Virtual Machine", "Java Variable Manager", "Java Visual Maker", "Java Virtual Manager"}, "Java Virtual Machine"));
-        addQuestion(new Question("Which method is used to start the execution of a Java program?", new String[]{"start()", "main()", "run()", "execute()"}, "main()"));
-        addQuestion(new Question("What is the term used for a class that cannot be instantiated?", new String[]{"Abstract class", "Final class", "Static class", "Interface"}, "Abstract class"));
-        addQuestion(new Question("Which of the following is an example of inheritance in Java?", new String[]{"class Dog extends Animal", "class Dog implements Animal", "class Dog uses Animal", "class Dog creates Animal"}, "class Dog extends Animal"));
-        addQuestion(new Question("**Which data structure uses LIFO (Last In First Out) principle?**", new String[]{"Queue", "Stack", "Linked List", "Array"}, "Stack"));
-        addQuestion(new Question("**What is the time complexity of accessing an element in an `ArrayList` by index?**", new String[]{"O(1)", "O(n)", "O(log n)", "O(n^2)"}, "O(1)"));
-        addQuestion(new Question("**Which sorting algorithm has an average time complexity of O(n log n)?**", new String[]{"Buble Sort", "Quick Sort", "Insertion Sort", "Selection Sort"}, "Quick Sort"));
-        addQuestion(new Question("**What is the worst-case time complexity of the binary search algorithm?**", new String[]{"O(1)", "O(n)", "O(log n)", "O(n^2)"}, "O(log n)"));
+
+        addQuestion(new Question("What is the size of a char in Java?", new String[]{"1 byte", "2 bytes", "4 bytes", "8 bytes"}, "2 bytes"));
+
+        addQuestion(new Question("Which keyword is used to define a constant in Java?", new String[]{"static", "final", "const", "immutable"}, "final"));
+
+        addQuestion(new Question("What is the correct way to declare an array of integers in Java?", new String[]{"int[] arr;", "int arr[];", "int arr;", "int[] arr = new int();"}, "int[] arr;"));
+
+        addQuestion(new Question("How do you create a new instance of a String in Java?", new String[]{"String str = new String();", "String str = new String(\"text\");", "String str = \"text\";", "All of the above"}, "All of the above"));
+
+    }
+
+    public void generateMediumQuestions() {
+        addQuestion(new Question("What will be the output of the following code snippet? \nint a = 5; \nint b = 10; \nSystem.out.println(a + b);", new String[]{"15", "510", "Error", "None of the above"}, "15"));
+
+        addQuestion(new Question("Which method is used to find the length of an array in Java?", new String[]{"length()", "size()", "length", "getSize()"}, "length"));
+
+        addQuestion(new Question("What is the result of the expression 10 / 3 in Java?", new String[]{"3", "3.0", "3.333", "Error"}, "3"));
+
+        addQuestion(new Question("Which access modifier makes a member visible only within its own package?", new String[]{"private", "protected", "default", "public"}, "default"));
+
+        addQuestion(new Question("What does the keyword 'static' signify when applied to a method?", new String[]{"The method can only be accessed by instances of the class", "The method belongs to the class, not instances", "The method is synchronized", "The method is abstract"}, "The method belongs to the class, not instances"));
+
+    }
+
+    public void generateHardQuestions() {
+        addQuestion(new Question("What will be the output of the following code snippet? \nint[] arr = {1, 2, 3}; \nSystem.out.println(arr[3]);", new String[]{"1", "2", "3", "ArrayIndexOutOfBoundsException"}, "ArrayIndexOutOfBoundsException"));
+
+        addQuestion(new Question("What is the result of the following operation: 5 << 1?", new String[]{"10", "5", "2", "20"}, "10"));
+
+        addQuestion(new Question("Which of the following is not a valid method signature in Java?", new String[]{"void method(int a);", "void method(int a, int b);", "void method(int a, int a);", "void method();"}, "void method(int a, int a);"));
+
+        addQuestion(new Question("What will be the result of the following code snippet? \nString s1 = \"Hello\"; \nString s2 = \"Hello\"; \nSystem.out.println(s1 == s2);", new String[]{"true", "false", "Error", "None of the above"}, "true"));
+
+        addQuestion(new Question("What is the result of the following operation: \nSystem.out.println(5 / 2.0);", new String[]{"2", "2.5", "2.0", "Error"}, "2.5"));
+
     }
 }
