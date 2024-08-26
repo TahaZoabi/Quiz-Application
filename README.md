@@ -22,7 +22,7 @@ Welcome to the Java Quiz App! This is a simple Java application designed to test
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/java-quiz-app.git
+   git clone https://github.com/TahaZoabi/Quiz-Application
 
 2. **Navigate to the project directory:**
        ``` cd Quiz-Application```
